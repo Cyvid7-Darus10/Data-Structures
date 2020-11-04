@@ -107,7 +107,7 @@ void Doubly_Stack<T>::enQueue(T val)
 		copy->next = newNode;
 		newNode->prev = copy;
 		rear = newNode;
-		cout << "\n[SUCCESS: Inserting at End]\n";
+		cout << "\n[SUCCESS: Enueueing]\n";
 		numNode++;
 	}
 }
@@ -174,7 +174,7 @@ void Doubly_Stack<T>::deQueue()
 			front->prev = NULL;
 			free(copy);
 		}	
-		cout << "\n[SUCCESS: Deleting " << data << " at beginning.]\n";
+		cout << "\n[SUCCESS: Dequeueing " << data << " at beginning.]\n";
 		numNode--;
 	}
 }

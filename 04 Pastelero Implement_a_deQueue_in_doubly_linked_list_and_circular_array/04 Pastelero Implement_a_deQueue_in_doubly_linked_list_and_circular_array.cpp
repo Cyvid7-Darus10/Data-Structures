@@ -1,6 +1,6 @@
-#include "doubly_linked_list_Queue.h"
-#include "circ_array_Queue.h"
-#include "user_friendly.h"
+#include "04 Pastelero Doubly_linked_list_Queue.h"
+#include "04 Pastelero Circ_array_Queue.h"
+#include "04 Pastelero User_friendly.h"
 
 //driver code for stack implementation using linked list
 //Data type used is integer but it can be by changing the datatype at declaring Queues
