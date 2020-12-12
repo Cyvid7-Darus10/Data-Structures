@@ -23,6 +23,12 @@ class Node
 	    Node(): left(NULL), right(NULL) {};
 };
 
+struct Holder 
+{
+    Holder *prev;
+    std::string str;
+    Holder(Holder *pr, std::string s): prev(pr), str(s) {};
+};
 
 class BST
 {
@@ -39,7 +45,8 @@ class BST
         void bfTraversal(Node*); //breath first traversal
 
         //tree printing
-        void print2D(Node*, int*, int);
+        void print2DV(Node*, int*, int);
+        void print2DH(Node*, Holder*, bool);
 
     public:
         BST(): root(NULL), numNodes(0) {};
@@ -137,14 +144,14 @@ void BST::bfTraversal(Node* rootNode) {
 
 //uses gotoxy for printing the tree vertically
 //uses recursion
-void BST::print2D(Node *rootNode, int *x, int y)
+void BST::print2DV(Node *rootNode, int *x, int y)
 {    
     if (rootNode != NULL) {
-        print2D(rootNode->left, x, y + 3);
+        print2DV(rootNode->left, x, y + 3);
         gotoxy(*x, y);
         std::cout << rootNode->key;
         *x += 3;
-        print2D(rootNode->right, x, y + 3);
+        print2DV(rootNode->right, x, y + 3);
     }
 }
 
@@ -278,7 +285,7 @@ void BST::print(int type)
      int x = 65;
     switch (type) {
         case 1:
-            print2D(root, &x, 7);
+            print2DV(root, &x, 10);
             break;
         case 2:
             preorder_print(root);
@@ -292,8 +299,51 @@ void BST::print(int type)
         case 5:
             bfTraversal(root);
             break;
+        case 6:
+            print2DH(root, NULL, false);
+            break;
     }
 }
+
+void printBranch(Holder* b) {
+    if (!b) {
+        return;
+    } else {
+        printBranch(b->prev);
+        std::cout << b->str;
+    }
+}
+
+void BST::print2DH(Node* root, Holder* prev, bool isLeft) {
+    if (!root) {
+        return;
+    }
+
+    std::string prevStr = "    ";
+    Holder* holder = new Holder(prev, prevStr);
+
+    print2DH(root->left, holder, true);
+
+    if (!prev) {
+        holder->str = "---";
+    } else if (isLeft) {
+        holder->str = " .---";
+        prevStr = "    |";
+    } else {
+        holder->str = " `---";
+        prev->str = prevStr;
+    }
+
+    printBranch(holder);
+    std::cout << "[" << root->key << "]" << std::endl;
+
+    if (prev)
+        prev->str = prevStr;
+    holder->str = "    |";
+    
+    print2DH(root->right, holder, false);
+}
+
 
 //get the number of data
 int BST::numData()

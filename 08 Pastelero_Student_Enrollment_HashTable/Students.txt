@@ -1,0 +1,18 @@
+121,Aastelero,Cyrus David,Dela Cruz,Male,12,09162790254,Santo RosariO
+118,Bastelero,TrisHa MaE,Dela Cruz,female,14,09162790254,Santo RosArio
+110,Pastelero,Aj AMmer,GetarAelas,MaLe,14,09162790254,Santo rosario
+102,Eastelero,CyrUs DArus,Do Juan,FeMale,19,09162790254,nta Caluse
+119,Dastelero,Trisha MaSse,Do Juana,feMale,14,09162790254,SaSanto RosarIo
+156,Pastelero,Aj AmASDasr,Franco,MalE,14,09162790254,Santo rosario
+122,Uastelero,Cyrus David,Murcia,Male,12,09162790254,Santo RosariO
+132,Qaatelero,Trisha MaE,Don Carlos,female,14,09162790254,Santo RosArio
+113,Bbestelero,Aj AMmer,GetarAelas,MaLe,14,09162790254,Santo roSario
+101,Gastelero,Cyrus Darus,Ramour,FeMale,19,09162790254,nta Caluse
+115,Pastelero,Trisha MaSse,Ramour,feMale,14,09162790254,SaSanto RosarIo
+116,Pastelero,Aj AmASDasr,Scaborg,MalE,14,09162790254,Santo rosario
+152,Pastelero,Cyrus David,Lurcia,Male,12,09162790254,Santo RosariO
+112,Qastelero,Trisha MaE,Lurcia,female,14,09162790254,Santo RosArio
+114,Rastelero,Aj AMmer,GetarAelas,MaLe,14,09162790254,Santo Meluco
+111,Castelero,Cyrus Darus,Mecu,FeMale,19,091627900,nta Caraga
+190,Dastelero,Trisha MaSse,Sabardgee,feMale,14,09160790254,SaSanto ReNdEra
+117,Eastelero,Aj AmASDasr,Geuelas,MalE,14,09162790254,Santo rosario

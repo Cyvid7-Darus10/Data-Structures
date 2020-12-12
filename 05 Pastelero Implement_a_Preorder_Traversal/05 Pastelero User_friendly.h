@@ -55,17 +55,15 @@ void welcome()
 	}
 
 	
-	gotoxy(46,5);
+	gotoxy(50,5);
 	color(2);
-	std::cout <<  "Binary Search Tree:" ;
+	std::cout <<  ":How To Use:" ;
 		
 	gotoxy(13,7);
 	color(15);
-	printf("\xB2 The smallest element will always be the one found by following the subtrees to the left");
-	gotoxy(13,8);
-	printf("  until you reach a leaf.");
+	printf("\xB2 Maximize the window to avoid glitches.");
 	gotoxy(13,9);
-	printf("\xB2 Similarly, the largest is found by traveling to the right until a leaf is reached.");
+	printf("\xB2 Use Up/Down Arrow Keys to navigate the program. Press enter to select.");
 
 	gotoxy(43,11);
 	color(3);
@@ -107,7 +105,7 @@ void welcome()
 
 void pause()
 {
-	gotoxy(15,25);
+	gotoxy(75,30);
 	color(11);
 	printf("\xB2\xB2PRESS ENETER TO CONINUE\xB2\xB2");
 
@@ -132,11 +130,11 @@ int input()
 	do {
 		//WARNINGS
 		if(wrongInput) {
-			gotoxy(55, 7);		
+			gotoxy(46, 7);		
 			std::cout << "[WRONG INPUT]";
 		}
 		if(isBig) {
-			gotoxy(55, 7);		
+			gotoxy(46, 7);		
 			std::cout << "[INPUT IS TOO BIG]";
 		}
 		//reinitializing the values
@@ -144,16 +142,16 @@ int input()
 		isBig = false;
 		wrongInput = false;
 
-		gotoxy(70,5);
+		gotoxy(61,5);
 		std::cout <<"                                    "; //clears inputs
-		gotoxy(55,5);
+		gotoxy(46,5);
 		std::cout <<"Enter only integer inputs:";
 		
 		num.clear();
 		getline(std::cin, num); //used getline for checking spaces
 		
 		//clears warnings
-		gotoxy(55, 7);		
+		gotoxy(46, 7);		
 		std::cout << "                              ";
 
 		if (num.length() <= 11) {
@@ -205,8 +203,8 @@ int menu(int type)
 	std::string Menu1[6] = {"Insertion", "Deletion", "Find a Node", 
 							"Show List", "More Functions", "Exit" };
 
-	std::string Menu2[5] = {"List Tree Graphically", "Print Nodes in Preorder", 
-							"Print Nodes in In-Order", "Print Nodes in Post-Order", "Breath First Traversal"};
+	std::string Menu2[6] = {"Show Tree Vertically", "Print Nodes in Preorder", "Print Nodes in In-Order",
+					 "Print Nodes in Post-Order", "Breath First Traversal", "Show Tree Horizontally"};
 
 	std::string Menu3[4] = {"Check if Empty", "Check the Number of Datas", 
 					"Check the Height of Tree", "Check What Type of Tree"};
@@ -224,7 +222,7 @@ int menu(int type)
 		case 2:
 			menuType = Menu2;
 			typeI = 1;
-			arrS = 5;
+			arrS = 6;
 			break;
 		case 3:
 			menuType = Menu3;
@@ -243,19 +241,19 @@ int menu(int type)
 		color(7);
 
 		box();
-		gotoxy(28,3);
+		gotoxy(19,3);
 		std::cout << types[typeI];
 
 
 		for (int i = 0; i < arrS; ++i) {
 			if (i == pointer) {
-				gotoxy(13,5 + i*2);
+				gotoxy(4,5 + i*2);
 				color(11);
 				printf("\xDB\xDB\xDB\xDB\xB2 %d.", i + 1);
 				std::cout << menuType[i];
 			}
 			else {
-				gotoxy(13,5 + i*2);
+				gotoxy(4,5 + i*2);
 				color(15);
 				printf("\xDB\xDB\xDB\xDB\xB2 %d.", i + 1);
 				std::cout << menuType[i];
@@ -290,34 +288,45 @@ int menu(int type)
 
 void box() 
 {
-	gotoxy(10,3);
+	gotoxy(1,3);
 	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2                \xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 
-	gotoxy(13,3);
+	gotoxy(4,3);
 	for (int i = 3; i <=20; i++) {
-		gotoxy(10,i);
-		printf("\xB2");
-	}
-	for (int i = 3; i <=30; i++) {
-		gotoxy(52,i);
+		gotoxy(1,i);
 		printf("\xB2");
 	}
 
-	gotoxy(35,1);
+	for (int i = 20; i <=40; i++) {
+		gotoxy(1,i);
+		printf("\xB2");
+	}
+
+	for (int i = 3; i <=40; i++) {
+		gotoxy(43,i);
+		printf("\xB2");
+	}
+
+	gotoxy(26,1);
 	std::cout << "BINARY SEARCH TREE | Pastelero | CMSC-123";
-	gotoxy(10,20);
+	gotoxy(1,20);
 	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 
-
-	gotoxy(52,3);
-	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2 DISPLAY \xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
-	gotoxy(52,6);
-	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
-	gotoxy(52,30);
-	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+	gotoxy(43,3);
+	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2 DISPLAY \xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+	gotoxy(43,6);
+	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+	gotoxy(43,30);
+	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 	for (int i = 3; i <=30; i++) {
-		gotoxy(106,i);
+		gotoxy(137,i);
 		printf("\xB2");
 	}
 
+	gotoxy(1,40);
+	printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+	
+	gotoxy(10,40);
+	color(3);
+	std::cout << "VERTICAL REPRESENTATION";
 }
